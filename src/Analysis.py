@@ -235,7 +235,7 @@ class Analysis():
         ax.grid(axis='y')
 
     def dotPlot(self,accuracies,labels,limit_min=True,colors_list=None):
-        markers = ['^','o','x','+','D','*','v']
+        markers = ['D','o','x','+','^','*','v']
 
         colors = ['green','darkblue','orange','grey','black','purple','aqua']
         if colors_list != None:
@@ -244,7 +244,7 @@ class Analysis():
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
             markerline, stemlines, baseline = plt.stem(
-                    np.arange(1,11), acc, linefmt=colors[index], markerfmt=markers[index])
+                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True, markerfmt=markers[index])
             markerline.set_markerfacecolor('none')
 
 
