@@ -234,7 +234,7 @@ class Analysis():
         plt.legend()
         ax.grid(axis='y')
 
-    def dotPlot(self,accuracies,labels,limit_min=True,colors_list=None):
+    def dotPlot(self,accuracies,labels,x_axis,limit_min=True,colors_list=None):
         markers = ['D','o','x','+','^','*','v']
 
         colors = ['green','darkblue','orange','grey','black','purple','aqua']
@@ -244,7 +244,7 @@ class Analysis():
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
             markerline, stemlines, baseline = ax.stem(
-                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True,bottom=8.05, markerfmt=markers[index],label=label)
+                    np.arange(x_axis), acc, linefmt='grey',use_line_collection=True, markerfmt=markers[index],label=label)
             markerline.set_markerfacecolor('none')
 
 
@@ -255,7 +255,7 @@ class Analysis():
         minor_ticks = np.arange(8, 18, 0.2)
         ax.set_yticks(major_ticks)
         ax.set_yticks(minor_ticks, minor=True)
-        ax.set_xticks(np.arange(1,11))
+        ax.set_xticks(np.arange(x_axis))
         if not limit_min:
             ax.set_xlim(xmin=9,xmax=101)
             ax.set_ylim(ymin=0.0,ymax=1.0)
