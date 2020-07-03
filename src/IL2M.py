@@ -9,7 +9,7 @@ class IL2M():
     def showResults(self,step,label=0):
 
         exemplar_score = None
-        if int(label/10) >= step:
+        if (label+10/10) > step:
             exemplar_score = self.mean_examplars_scores[label]
 
         return self.mean_train_scores[label][1],exemplar_score
