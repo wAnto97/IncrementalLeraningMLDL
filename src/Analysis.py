@@ -243,14 +243,14 @@ class Analysis():
 
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
-            plt.scatter(np.arange(1,11),acc,marker=markers[index],color=colors[index],label=label)
+            ax.scatter(np.arange(1,11),acc,marker=markers[index],color=colors[index],label=label)
 
 
         plt.ylabel('Mean prediction score')
         plt.xlabel('Incremental step')
 
-        major_ticks = np.arange(0, 1.1, 0.1)
-        minor_ticks = np.arange(0, 1, 0.02)
+        major_ticks = np.arange(8, 18, 1)
+        minor_ticks = np.arange(8, 18, 0.2)
         ax.set_yticks(major_ticks)
         ax.set_yticks(minor_ticks, minor=True)
         ax.set_xticks(np.arange(1,11))
