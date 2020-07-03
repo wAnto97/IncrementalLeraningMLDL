@@ -262,6 +262,7 @@ class Analysis():
             ax.set_ylim(ymin=6,ymax=20)
         
         plt.legend()
+        ax.grid(axis='y')
 
     def plotAccTrendComparison(self,accuracies,labels,limit_min=True):
         markers = ['^','o','x','+','D','*','v']
