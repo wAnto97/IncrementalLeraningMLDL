@@ -243,8 +243,8 @@ class Analysis():
 
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
-            markerline, stemlines, baseline = plt.stem(
-                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True,bottom=8.0, markerfmt=markers[index])
+            markerline, stemlines, baseline = ax.stem(
+                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True,bottom=8.05, markerfmt=markers[index],label=label)
             markerline.set_markerfacecolor('none')
 
 
