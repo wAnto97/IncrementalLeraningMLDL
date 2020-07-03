@@ -5,6 +5,17 @@ class IL2M():
         self.mean_train_scores = {}
         self.mean_examplars_scores = {}
         self.confidences = {}
+    
+    def showResults(self,step,label=0):
+
+        exemplar_score = None
+        if int(label/10) >= step:
+            exemplar_score = self.mean_examplars_scores[label]
+
+        return self.mean_train_scores[label][1],exemplar_score
+
+
+
 
     def update(self, step, net, train_dataloader,num_old_classes,num_new_classes = 10):
         # initialize the confidence for the new state of the net
