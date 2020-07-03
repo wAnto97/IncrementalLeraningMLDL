@@ -250,12 +250,12 @@ class Analysis():
         minor_ticks = np.arange(0, 1, 0.02)
         ax.set_yticks(major_ticks)
         ax.set_yticks(minor_ticks, minor=True)
-        ax.set_xticks(np.arange(0.9,11.1,1.0))
+        ax.set_xticks(np.arange(1,11))
         if not limit_min:
             ax.set_xlim(xmin=9,xmax=101)
             ax.set_ylim(ymin=0.0,ymax=1.0)
         else:
-            ax.set_xlim(xmin=1,xmax=10)
+            ax.set_xlim(xmin=0.9,xmax=10.1)
             ax.set_ylim(ymin=6,ymax=20)
         
         plt.legend()
