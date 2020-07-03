@@ -6,10 +6,10 @@ class IL2M():
         self.mean_examplars_scores = {}
         self.confidences = {}
     
-    def showResults(self,label=0):
+    def showResults(self,step,label=0):
 
         exemplar_score = None
-        if (label+10/10) > self.mean_train_scores[label][0]:
+        if step > 1:
             exemplar_score = self.mean_examplars_scores[label]
 
         return self.mean_train_scores[label][1],exemplar_score
