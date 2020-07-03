@@ -244,6 +244,9 @@ class Analysis():
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
             ax.stem(np.arange(1,11),acc,marker=markers[index],color=colors[index],label=label)
+            markerline, stemlines, baseline = plt.stem(
+                    np.arange(1,11), acc, linefmt='grey', markerfmt='D')
+            markerline.set_markerfacecolor('none')
 
 
         plt.ylabel('Mean prediction score')
