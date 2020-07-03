@@ -234,7 +234,7 @@ class Analysis():
         plt.legend()
         ax.grid(axis='y')
 
-    def dotPlot(self,accuracies,labels,limit_min=True,colors_list=None):
+    def dotPlot(self,accuracies,labels,limit_min=True,colors_list=None,typeplot='plot'):
         markers = ['D','o','x','+','^','*','v']
 
         colors = ['green','darkblue','orange','grey','black','purple','aqua']
@@ -243,9 +243,14 @@ class Analysis():
 
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
-            markerline, stemlines, baseline = ax.stem(
-                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True, markerfmt=markers[index],label=label)
-            markerline.set_markerfacecolor('none')
+            if typeplot == 'stem':
+                markerline, stemlines, baseline = ax.stem(
+                        np.arange(1,11), acc, linefmt='grey',use_line_collection=True, markerfmt=markers[index],label=label)
+                markerline.set_markerfacecolor('none')
+            elif typeplot == 'plot':
+                ax.plot(np.arange(1,11),acc,marker=markers[index],color=colors[index],label=label)
+
+
 
 
         plt.ylabel('Mean prediction score')
