@@ -244,7 +244,7 @@ class Analysis():
         _,ax = plt.subplots(figsize=(12,8))
         for index,(acc,label) in enumerate(zip(accuracies,labels)):
             markerline, stemlines, baseline = plt.stem(
-                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True, markerfmt=markers[index])
+                    np.arange(1,11), acc, linefmt='grey',use_line_collection=True,bottom=8.0, markerfmt=markers[index])
             markerline.set_markerfacecolor('none')
 
 
@@ -261,10 +261,10 @@ class Analysis():
             ax.set_ylim(ymin=0.0,ymax=1.0)
         else:
             ax.set_xlim(xmin=0.9,xmax=10.1)
-            ax.set_ylim(ymin=6,ymax=20)
+            ax.set_ylim(ymin=8,ymax=17)
         
         plt.legend()
-        ax.grid(axis='y')
+        #ax.grid(axis='y')
 
     def plotAccTrendComparison(self,accuracies,labels,limit_min=True):
         markers = ['^','o','x','+','D','*','v']
