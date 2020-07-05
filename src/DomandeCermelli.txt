@@ -1,8 +1,0 @@
-1) Funzionamento di forward e gradienti
-2) Loss nostra , better results. Come si fa uno studio della loss per capire se si adegua bene al dataset o funziona bene in generale? 
-3)
-
-
-VIRTUAL CLASSROOM
-3) Il punto 4 bisogna farlo partendo da icarl e cambiando solo il classificatore? 
-4) Secondo lei, qual è un buono spunto da cui partire per il punto 5? Quali altri metodi si adottano per fare incremental learning?
